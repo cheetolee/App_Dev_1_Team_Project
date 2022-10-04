@@ -1,5 +1,4 @@
-﻿// connected to database
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +27,8 @@ namespace WindowsFormsApp1
 
         private void Registration_Load(object sender, EventArgs e)
         {
-          
+            cn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =\\Mac\Home\Documents\database.mdf; Integrated Security = True; Connect Timeout = 30; Integrated Security=True");
+            cn.Open();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

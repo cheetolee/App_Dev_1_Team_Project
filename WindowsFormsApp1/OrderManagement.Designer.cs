@@ -1,4 +1,4 @@
-﻿// label3 & label4 008
+﻿// label5 & txtCustomerName 009
 
 namespace WindowsFormsApp1
 {
@@ -112,6 +112,23 @@ namespace WindowsFormsApp1
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Date";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(305, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Mobile";
+            // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.Location = new System.Drawing.Point(104, 26);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(169, 20);
+            this.txtCustomerName.TabIndex = 4;
+
         }
 
 

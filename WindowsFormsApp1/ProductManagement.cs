@@ -51,6 +51,25 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.listBox2);
+            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.textDescription);
+            this.panel1.Controls.Add(this.textPrice);
+            this.panel1.Controls.Add(this.txtStock);
+            this.panel1.Controls.Add(this.txtName);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblCompany);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(557, 144);
+            this.panel1.TabIndex = 0;
         }
     }
 }

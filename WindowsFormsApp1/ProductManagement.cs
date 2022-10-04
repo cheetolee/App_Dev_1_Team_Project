@@ -79,6 +79,15 @@
             this.lblCompany.Size = new System.Drawing.Size(51, 13);
             this.lblCompany.TabIndex = 0;
             this.lblCompany.Text = "Company";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Stock";
         }
     }
 }

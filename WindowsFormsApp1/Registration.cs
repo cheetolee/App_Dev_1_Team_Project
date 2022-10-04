@@ -33,7 +33,9 @@ namespace WindowsFormsApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

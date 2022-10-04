@@ -140,5 +140,17 @@
             this.PerformLayout();
 
         }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPwd;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnForgotPwd;
+        private System.Windows.Forms.Button btnLoginGithub;
+        private System.Windows.Forms.Button btnLoginFacebook;
     }
 }

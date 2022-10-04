@@ -1,6 +1,6 @@
-﻿// Login.cs Cheeto 007
+﻿// Login.cs Cheeto 008
 
-// public Login
+// private void Login_Load
 
 using System;
 using System.Collections.Generic;
@@ -24,6 +24,12 @@ namespace WindowsFormsApp1
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            cn = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename =\\Mac\Home\Documents\database.mdf; Integrated Security = True; Connect Timeout = 30; Integrated Security=True");
+            cn.Open();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

@@ -118,6 +118,27 @@
             this.btnLoginFacebook.TabIndex = 8;
             this.btnLoginFacebook.Text = "Login with Facebook";
             this.btnLoginFacebook.UseVisualStyleBackColor = true;
+            // 
+            // Login
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(382, 292);
+            this.Controls.Add(this.btnLoginFacebook);
+            this.Controls.Add(this.btnLoginGithub);
+            this.Controls.Add(this.btnForgotPwd);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtPwd);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "Login";
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
     }
 }

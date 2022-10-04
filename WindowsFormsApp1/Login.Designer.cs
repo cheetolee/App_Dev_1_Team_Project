@@ -109,6 +109,15 @@
             this.btnLoginGithub.TabIndex = 7;
             this.btnLoginGithub.Text = "Login with Github";
             this.btnLoginGithub.UseVisualStyleBackColor = true;
+            // 
+            // btnLoginFacebook
+            // 
+            this.btnLoginFacebook.Location = new System.Drawing.Point(101, 228);
+            this.btnLoginFacebook.Name = "btnLoginFacebook";
+            this.btnLoginFacebook.Size = new System.Drawing.Size(195, 23);
+            this.btnLoginFacebook.TabIndex = 8;
+            this.btnLoginFacebook.Text = "Login with Facebook";
+            this.btnLoginFacebook.UseVisualStyleBackColor = true;
         }
     }
 }

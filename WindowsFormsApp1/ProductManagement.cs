@@ -145,6 +145,13 @@
             this.textPrice.Name = "textPrice";
             this.textPrice.Size = new System.Drawing.Size(120, 20);
             this.textPrice.TabIndex = 8;
+            // 
+            // textDescription
+            // 
+            this.textDescription.Location = new System.Drawing.Point(371, 96);
+            this.textDescription.Name = "textDescription";
+            this.textDescription.Size = new System.Drawing.Size(120, 20);
+            this.textDescription.TabIndex = 9;
         }
     }
 }

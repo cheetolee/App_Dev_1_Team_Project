@@ -1,6 +1,6 @@
-﻿// Login.cs Cheeto 004
+﻿// Login.cs Cheeto 005
 
-// if else, login table, message box
+// if ... ShowDialog
 
 using System;
 using System.Collections.Generic;
@@ -28,6 +28,13 @@ namespace WindowsFormsApp1
 
                 cmd = new SqlCommand("select * from LoginTable where username='" + txtUsername.Text + "' and password='" + txtPwd.Text + "'", cn);
                 dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    dr.Close();
+                    this.Hide();
+                    OrderManagement home = new OrderManagement();
+                    home.ShowDialog();
+                }
 
             }
             else

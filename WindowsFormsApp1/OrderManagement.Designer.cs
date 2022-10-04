@@ -1,4 +1,4 @@
-﻿// label8 019
+﻿// OrderManagement 020
 
 namespace WindowsFormsApp1
 {
@@ -254,7 +254,30 @@ namespace WindowsFormsApp1
             this.label8.Size = new System.Drawing.Size(202, 24);
             this.label8.TabIndex = 0;
             this.label8.Text = "Total Amount :  112$";
-
+            // 
+            // OrderManagement
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(584, 453);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.Name = "OrderManagement";
+            this.Text = "OrderManagement";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

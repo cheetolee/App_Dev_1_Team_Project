@@ -1,4 +1,4 @@
-﻿// panel2 & txtQuantity 011
+﻿// label6 and label9 012
 
 namespace WindowsFormsApp1
 {
@@ -168,6 +168,25 @@ namespace WindowsFormsApp1
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(118, 20);
             this.txtQuantity.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(251, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Quantity";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Select Product";
+
         }
 
 

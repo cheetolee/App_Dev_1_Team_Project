@@ -206,6 +206,15 @@
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(416, 17);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 23);
+            this.btnFind.TabIndex = 3;
+            this.btnFind.Text = "Find";
+            this.btnFind.UseVisualStyleBackColor = true;
         }
     }
 }

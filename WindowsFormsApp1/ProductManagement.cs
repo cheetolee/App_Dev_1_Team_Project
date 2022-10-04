@@ -124,6 +124,13 @@
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Description";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(95, 63);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(120, 20);
+            this.txtName.TabIndex = 6;
         }
     }
 }

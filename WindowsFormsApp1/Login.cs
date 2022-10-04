@@ -1,6 +1,6 @@
-﻿// Login.cs Cheeto 008
+﻿// Login.cs Cheeto 009
 
-// private void Login_Load
+// private void btnRegister_Click
 
 using System;
 using System.Collections.Generic;
@@ -57,6 +57,13 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Registration registration = new Registration();
+            registration.ShowDialog();
         }
 
     }

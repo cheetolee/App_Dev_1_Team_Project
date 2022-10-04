@@ -152,6 +152,14 @@
             this.textDescription.Name = "textDescription";
             this.textDescription.Size = new System.Drawing.Size(120, 20);
             this.textDescription.TabIndex = 9;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(95, 30);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 17);
+            this.listBox1.TabIndex = 10;
         }
     }
 }

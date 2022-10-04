@@ -63,6 +63,13 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(144, 20);
             this.txtUsername.TabIndex = 2;
+            // 
+            // txtPwd
+            // 
+            this.txtPwd.Location = new System.Drawing.Point(149, 83);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.Size = new System.Drawing.Size(144, 20);
+            this.txtPwd.TabIndex = 3;
         }
     }
 }

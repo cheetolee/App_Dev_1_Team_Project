@@ -1,4 +1,4 @@
-﻿// label6 and label9 012
+﻿// listBox1 013
 
 namespace WindowsFormsApp1
 {
@@ -186,7 +186,14 @@ namespace WindowsFormsApp1
             this.label9.Size = new System.Drawing.Size(77, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Select Product";
-
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(92, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 17);
+            this.listBox1.TabIndex = 7;
         }
 
 

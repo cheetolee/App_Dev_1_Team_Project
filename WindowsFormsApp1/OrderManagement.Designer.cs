@@ -1,4 +1,4 @@
-﻿// label5 & txtCustomerName 009
+﻿// txtOrderID & txtMobile & txtDate 010
 
 namespace WindowsFormsApp1
 {
@@ -128,6 +128,27 @@ namespace WindowsFormsApp1
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(169, 20);
             this.txtCustomerName.TabIndex = 4;
+            // 
+            // txtOrderID
+            // 
+            this.txtOrderID.Location = new System.Drawing.Point(104, 63);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.Size = new System.Drawing.Size(169, 20);
+            this.txtOrderID.TabIndex = 5;
+            // 
+            // txtMobile
+            // 
+            this.txtMobile.Location = new System.Drawing.Point(349, 26);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(169, 20);
+            this.txtMobile.TabIndex = 6;
+            // 
+            // txtDate
+            // 
+            this.txtDate.Location = new System.Drawing.Point(349, 62);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(169, 20);
+            this.txtDate.TabIndex = 7;
 
         }
 

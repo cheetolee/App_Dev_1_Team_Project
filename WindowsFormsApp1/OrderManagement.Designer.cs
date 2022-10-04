@@ -1,4 +1,4 @@
-﻿// button1 014
+﻿// dataGridView1 015
 
 namespace WindowsFormsApp1
 {
@@ -203,6 +203,19 @@ namespace WindowsFormsApp1
             this.button1.TabIndex = 8;
             this.button1.Text = "Add Item";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.databaseDataSetBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 199);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(555, 185);
+            this.dataGridView1.TabIndex = 9;
 
         }
 

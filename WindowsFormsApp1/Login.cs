@@ -1,6 +1,6 @@
-﻿// Login.cs Cheeto 005
+﻿// Login.cs Cheeto 006
 
-// if ... ShowDialog
+// else ... No Account available with this username and password, MessageBox
 
 using System;
 using System.Collections.Generic;
@@ -34,6 +34,11 @@ namespace WindowsFormsApp1
                     this.Hide();
                     OrderManagement home = new OrderManagement();
                     home.ShowDialog();
+                }
+                else
+                {
+                    dr.Close();
+                    MessageBox.Show("No Account avilable with this username and password ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }

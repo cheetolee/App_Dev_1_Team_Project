@@ -100,6 +100,15 @@
             this.btnForgotPwd.Text = "Forgot password";
             this.btnForgotPwd.UseVisualStyleBackColor = true;
             this.btnForgotPwd.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnLoginGithub
+            // 
+            this.btnLoginGithub.Location = new System.Drawing.Point(101, 199);
+            this.btnLoginGithub.Name = "btnLoginGithub";
+            this.btnLoginGithub.Size = new System.Drawing.Size(195, 23);
+            this.btnLoginGithub.TabIndex = 7;
+            this.btnLoginGithub.Text = "Login with Github";
+            this.btnLoginGithub.UseVisualStyleBackColor = true;
         }
     }
 }

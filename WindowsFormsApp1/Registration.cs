@@ -1,4 +1,5 @@
-﻿using System;
+﻿// connected to database
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,7 @@ namespace WindowsFormsApp1
 
         public Registration()
         {
-            
+            InitializeComponent();
         }
 
         private void Registration_Load(object sender, EventArgs e)

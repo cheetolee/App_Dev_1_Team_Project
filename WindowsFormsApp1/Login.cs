@@ -1,6 +1,6 @@
-﻿// Login.cs Cheeto 003
+﻿// Login.cs Cheeto 004
 
-// private void btnLogin_Click
+// if else, login table, message box
 
 using System;
 using System.Collections.Generic;
@@ -23,7 +23,17 @@ namespace WindowsFormsApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (txtPwd.Text != string.Empty || txtUsername.Text != string.Empty)
+            {
 
+                cmd = new SqlCommand("select * from LoginTable where username='" + txtUsername.Text + "' and password='" + txtPwd.Text + "'", cn);
+                dr = cmd.ExecuteReader();
+
+            }
+            else
+            {
+                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }

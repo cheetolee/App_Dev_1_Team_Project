@@ -1,4 +1,4 @@
-﻿// label1 & label2 007
+﻿// label3 & label4 008
 
 namespace WindowsFormsApp1
 {
@@ -94,7 +94,24 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 0;
             this.label2.Text = "Customer Name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(51, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Order ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(313, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Date";
         }
 
 

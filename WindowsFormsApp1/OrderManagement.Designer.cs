@@ -1,4 +1,4 @@
-﻿// databaseDataSet, databaseDataSetBindingSource 016
+﻿// panel3 017
 
 namespace WindowsFormsApp1
 {
@@ -226,6 +226,16 @@ namespace WindowsFormsApp1
             // 
             this.databaseDataSetBindingSource.DataSource = this.databaseDataSet;
             this.databaseDataSetBindingSource.Position = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnSaveOrder);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Location = new System.Drawing.Point(12, 403);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(555, 39);
+            this.panel3.TabIndex = 9;
+
         }
 
 

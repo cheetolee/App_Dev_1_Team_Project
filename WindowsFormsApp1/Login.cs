@@ -1,6 +1,6 @@
-﻿// Login.cs Cheeto 002
+﻿// Login.cs Cheeto 003
 
-// public partial class Login : Form
+// private void btnLogin_Click
 
 using System;
 using System.Collections.Generic;
@@ -20,6 +20,11 @@ namespace WindowsFormsApp1
         private SqlConnection cn;
         private SqlCommand cmd;
         private SqlDataReader dr;
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
 
     }
 

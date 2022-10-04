@@ -41,7 +41,39 @@ namespace WindowsFormsApp1
         private void btnRegister_Click(object sender, EventArgs e)
         {
         
+            if (txtConfirmPwd.Text != string.Empty || txtPwd.Text != string.Empty || txtUsername.Text != string.Empty)
+            {
+                if (txtPwd.Text == txtConfirmPwd.Text)
+                {
+                    cmd = new SqlCommand("select * from LoginTable where username='" + txtUsername.Text + "'", cn);
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        dr.Close();
+                        MessageBox.Show("Username Already exist please try another ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        dr.Close();
+                        cmd = new SqlCommand("insert into LoginTable values(@username,@password)", cn);
+                        cmd.Parameters.AddWithValue("username", txtUsername.Text);
+                        cmd.Parameters.AddWithValue("password", txtPwd.Text);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter both password same ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+       
       
     }
 }

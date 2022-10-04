@@ -1,4 +1,4 @@
-﻿// txtOrderID & txtMobile & txtDate 010
+﻿// panel2 & txtQuantity 011
 
 namespace WindowsFormsApp1
 {
@@ -149,7 +149,25 @@ namespace WindowsFormsApp1
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(169, 20);
             this.txtDate.TabIndex = 7;
-
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.listBox1);
+            this.panel2.Controls.Add(this.txtQuantity);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Location = new System.Drawing.Point(12, 154);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(555, 39);
+            this.panel2.TabIndex = 8;
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(308, 11);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(118, 20);
+            this.txtQuantity.TabIndex = 6;
         }
 
 

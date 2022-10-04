@@ -1,4 +1,4 @@
-﻿// dataGridView1 015
+﻿// databaseDataSet, databaseDataSetBindingSource 016
 
 namespace WindowsFormsApp1
 {
@@ -216,7 +216,16 @@ namespace WindowsFormsApp1
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(555, 185);
             this.dataGridView1.TabIndex = 9;
-
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "databaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // databaseDataSetBindingSource
+            // 
+            this.databaseDataSetBindingSource.DataSource = this.databaseDataSet;
+            this.databaseDataSetBindingSource.Position = 0;
         }
 
 

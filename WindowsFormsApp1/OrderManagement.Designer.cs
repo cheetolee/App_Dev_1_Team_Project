@@ -1,4 +1,4 @@
-﻿// btnSaveOrder 018
+﻿// label8 019
 
 namespace WindowsFormsApp1
 {
@@ -244,6 +244,18 @@ namespace WindowsFormsApp1
             this.btnSaveOrder.TabIndex = 8;
             this.btnSaveOrder.Text = "Save Order";
             this.btnSaveOrder.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(7, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(202, 24);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Total Amount :  112$";
+
+
         }
 
 

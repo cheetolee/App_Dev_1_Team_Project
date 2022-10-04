@@ -241,5 +241,27 @@
             this.ResumeLayout(false);
 
         }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCompany;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textDescription;
+        private System.Windows.Forms.TextBox textPrice;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

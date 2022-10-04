@@ -1,6 +1,6 @@
-﻿// Login.cs Cheeto 006
+﻿// Login.cs Cheeto 007
 
-// else ... No Account available with this username and password, MessageBox
+// public Login
 
 using System;
 using System.Collections.Generic;
@@ -20,6 +20,11 @@ namespace WindowsFormsApp1
         private SqlConnection cn;
         private SqlCommand cmd;
         private SqlDataReader dr;
+
+        public Login()
+        {
+            InitializeComponent();
+        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {

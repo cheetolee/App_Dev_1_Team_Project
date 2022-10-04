@@ -131,6 +131,13 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(120, 20);
             this.txtName.TabIndex = 6;
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(95, 93);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(120, 20);
+            this.txtStock.TabIndex = 7;
         }
     }
 }

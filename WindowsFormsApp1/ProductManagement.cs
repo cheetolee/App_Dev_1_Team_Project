@@ -168,6 +168,17 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(120, 17);
             this.listBox2.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnFind);
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Location = new System.Drawing.Point(12, 162);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(557, 59);
+            this.panel2.TabIndex = 12;
         }
     }
 }

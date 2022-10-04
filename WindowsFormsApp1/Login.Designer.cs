@@ -90,6 +90,16 @@
             this.btnRegister.Text = "Don\'t have an Account ? Create";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // btnForgotPwd
+            // 
+            this.btnForgotPwd.Location = new System.Drawing.Point(101, 170);
+            this.btnForgotPwd.Name = "btnForgotPwd";
+            this.btnForgotPwd.Size = new System.Drawing.Size(192, 23);
+            this.btnForgotPwd.TabIndex = 6;
+            this.btnForgotPwd.Text = "Forgot password";
+            this.btnForgotPwd.UseVisualStyleBackColor = true;
+            this.btnForgotPwd.Click += new System.EventHandler(this.button1_Click);
         }
     }
 }

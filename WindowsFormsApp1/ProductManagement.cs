@@ -138,6 +138,13 @@
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(120, 20);
             this.txtStock.TabIndex = 7;
+            // 
+            // textPrice
+            // 
+            this.textPrice.Location = new System.Drawing.Point(371, 60);
+            this.textPrice.Name = "textPrice";
+            this.textPrice.Size = new System.Drawing.Size(120, 20);
+            this.textPrice.TabIndex = 8;
         }
     }
 }

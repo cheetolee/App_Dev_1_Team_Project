@@ -1,4 +1,6 @@
-﻿// OrderManagement 020
+﻿// Finalized OrderManagement.Designer.cs 21
+
+// Added endregion
 
 namespace WindowsFormsApp1
 {
@@ -281,6 +283,29 @@ namespace WindowsFormsApp1
 
         }
 
+        #endregion
 
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtMobile;
+        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.TextBox txtOrderID;
+        private System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource databaseDataSetBindingSource;
+        private databaseDataSet databaseDataSet;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnSaveOrder;
+        private System.Windows.Forms.Label label8;
     }
 }

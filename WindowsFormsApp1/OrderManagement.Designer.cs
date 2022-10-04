@@ -1,4 +1,4 @@
-﻿// Dispose method 3
+﻿// Windows Form Designer code 4
 
 namespace WindowsFormsApp1
 {
@@ -22,5 +22,11 @@ namespace WindowsFormsApp1
             base.Dispose(disposing);
         }
 
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
     }
 }

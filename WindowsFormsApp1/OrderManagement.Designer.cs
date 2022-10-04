@@ -1,4 +1,4 @@
-﻿// listBox1 013
+﻿// button1 014
 
 namespace WindowsFormsApp1
 {
@@ -194,6 +194,16 @@ namespace WindowsFormsApp1
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 17);
             this.listBox1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(435, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Add Item";
+            this.button1.UseVisualStyleBackColor = true;
+
         }
 
 

@@ -70,6 +70,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(557, 144);
             this.panel1.TabIndex = 0;
+            // 
+            // lblCompany
+            // 
+            this.lblCompany.AutoSize = true;
+            this.lblCompany.Location = new System.Drawing.Point(33, 34);
+            this.lblCompany.Name = "lblCompany";
+            this.lblCompany.Size = new System.Drawing.Size(51, 13);
+            this.lblCompany.TabIndex = 0;
+            this.lblCompany.Text = "Company";
         }
     }
 }

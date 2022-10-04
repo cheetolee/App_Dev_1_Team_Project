@@ -56,6 +56,13 @@
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Enter Password";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(149, 39);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(144, 20);
+            this.txtUsername.TabIndex = 2;
         }
     }
 }

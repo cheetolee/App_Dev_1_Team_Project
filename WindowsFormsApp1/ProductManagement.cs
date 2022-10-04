@@ -115,6 +115,15 @@
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Select Type";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(277, 96);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Description";
         }
     }
 }

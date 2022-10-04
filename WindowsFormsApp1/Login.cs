@@ -1,6 +1,6 @@
-﻿// Login.cs Cheeto 009
+﻿// Login.cs FINAL Cheeto 010
 
-// private void btnRegister_Click
+// private void button1_Click
 
 using System;
 using System.Collections.Generic;
@@ -66,6 +66,10 @@ namespace WindowsFormsApp1
             registration.ShowDialog();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

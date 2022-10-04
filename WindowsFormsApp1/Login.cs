@@ -1,6 +1,6 @@
-﻿// Login.cs Cheeto 001
+﻿// Login.cs Cheeto 002
 
-// Initiated Login.cs
+// public partial class Login : Form
 
 using System;
 using System.Collections.Generic;
@@ -15,6 +15,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    public partial class Login : Form
+    {
+        private SqlConnection cn;
+        private SqlCommand cmd;
+        private SqlDataReader dr;
 
+    }
 
 }
+
+

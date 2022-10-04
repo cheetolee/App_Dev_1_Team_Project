@@ -97,6 +97,15 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(277, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Price per unit";
         }
     }
 }

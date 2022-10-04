@@ -1,4 +1,4 @@
-﻿// panel3 017
+﻿// btnSaveOrder 018
 
 namespace WindowsFormsApp1
 {
@@ -235,7 +235,15 @@ namespace WindowsFormsApp1
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(555, 39);
             this.panel3.TabIndex = 9;
-
+            // 
+            // btnSaveOrder
+            // 
+            this.btnSaveOrder.Location = new System.Drawing.Point(435, 8);
+            this.btnSaveOrder.Name = "btnSaveOrder";
+            this.btnSaveOrder.Size = new System.Drawing.Size(105, 23);
+            this.btnSaveOrder.TabIndex = 8;
+            this.btnSaveOrder.Text = "Save Order";
+            this.btnSaveOrder.UseVisualStyleBackColor = true;
         }
 
 

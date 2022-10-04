@@ -179,6 +179,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(557, 59);
             this.panel2.TabIndex = 12;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(36, 17);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
         }
     }
 }

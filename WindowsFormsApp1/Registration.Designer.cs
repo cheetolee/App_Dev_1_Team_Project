@@ -161,6 +161,31 @@
             this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Enter Your Address";
+            // 
+            // Registration
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(685, 295);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtConfirmPwd);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.txtPwd);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "Registration";
+            this.Text = "Registration";
+            this.Load += new System.EventHandler(this.Registration_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

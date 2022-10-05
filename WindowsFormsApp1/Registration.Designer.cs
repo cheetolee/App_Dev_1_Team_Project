@@ -86,7 +86,16 @@
             this.btnRegister.Text = "Register Now";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(248, 235);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(225, 23);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Have an account ? Login Now";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
         }
 
         #endregion

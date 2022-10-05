@@ -76,6 +76,16 @@
             this.txtPwd.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtPwd.Size = new System.Drawing.Size(135, 20);
             this.txtPwd.TabIndex = 3;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(305, 189);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(107, 23);
+            this.btnRegister.TabIndex = 4;
+            this.btnRegister.Text = "Register Now";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
 
         }
 

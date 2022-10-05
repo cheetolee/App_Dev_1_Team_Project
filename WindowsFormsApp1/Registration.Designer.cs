@@ -96,6 +96,24 @@
             this.btnLogin.Text = "Have an account ? Login Now";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // txtConfirmPwd
+            // 
+            this.txtConfirmPwd.Location = new System.Drawing.Point(151, 119);
+            this.txtConfirmPwd.Name = "txtConfirmPwd";
+            this.txtConfirmPwd.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtConfirmPwd.Size = new System.Drawing.Size(135, 20);
+            this.txtConfirmPwd.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Confirm Password";
+
         }
 
         #endregion

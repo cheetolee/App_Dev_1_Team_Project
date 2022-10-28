@@ -93,7 +93,7 @@ namespace DataLayer
                 // quantity changes of every record from the TransactionBody table.
                 var query1 = (from body in db.TransactionBody.Where(condition)
                               join head in db.TransactionHeader on body.TransactionId equals head.Id
-                              select new { ProductId = body.ProductId, Quantity = body.Quantity * (head.Incoming ? 1 : -1) });
+                              select new { ProductId = body.ProductId, Quantity = body.Quantity });
                 // The secound query groups the first query's result by ProductID and 
                 // sums the quantity changes to get the stock quantity of the product.
                 // It also returns the product's record from the Products table.
@@ -131,7 +131,7 @@ namespace DataLayer
                              group body by body.TransactionId into g
                              join head in db.TransactionHeader on g.FirstOrDefault().TransactionId equals head.Id
                              join user in db.Users on head.Username equals user.Username
-                             select new { Head = head, User = user, Sum = g.Sum(p => p.Quantity) * (head.Incoming ? 1 : -1) } );
+                             select new { Head = head, User = user, Sum = g.Sum(p => p.Quantity) } );
 
                 foreach (var record in query)
                     list.Add(new TransactionHeadListEntity(record.Head, record.User, record.Sum));
@@ -154,7 +154,7 @@ namespace DataLayer
                 var query = (from head in db.TransactionHeader.Where(condition)
                              group head by head.Username into g
                              join user in db.Users on g.FirstOrDefault().Username equals user.Username
-                             select new { User = user, Sum = g.Sum(p => p.TotalPrice * (p.Incoming ? -1 : 1)) });
+                             select new { User = user, Sum = g.Sum(p => p.TotalPrice ) });
                 foreach (var record in query)
                     list.Add(new TransactionHeadListEntity(null, record.User, record.Sum));
             }

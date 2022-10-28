@@ -38,8 +38,28 @@ namespace BusinessLayer
         {
             return UsersProvider.IsValidPassword(userID, password);
         }
-        public static bool AddUser(string userID, string password)
+        public static bool AddUser(string firstname, string lastname, string address, string email, string phone, string userID, string password)
         {
+            if (string.IsNullOrWhiteSpace(firstname))
+            {
+                throw new System.ArgumentException("Wrong firsntmae.", "firsntmae");
+            }
+            if (string.IsNullOrWhiteSpace(lastname))
+            {
+                throw new System.ArgumentException("Wrong lastname.", "lastname");
+            }
+            if (string.IsNullOrWhiteSpace(address))
+            {
+                throw new System.ArgumentException("Wrong address.", "address");
+            }
+            if (string.IsNullOrWhiteSpace(phone))
+            {
+                throw new System.ArgumentException("Wrong phone.", "phone");
+            }
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                throw new System.ArgumentException("Wrong email.", "email");
+            }
             if (string.IsNullOrWhiteSpace(userID))
             {
                 throw new System.ArgumentException("Wrong username.", "userID");
@@ -48,7 +68,7 @@ namespace BusinessLayer
             {
                 throw new System.ArgumentException("Wrong password.", "userID");
             }
-            return UsersProvider.NewUser(userID, password);
+            return UsersProvider.NewUser( firstname,  lastname,  address,  email,  phone, userID, password);
         }
         public static bool RemoveUser(string userID)
         {

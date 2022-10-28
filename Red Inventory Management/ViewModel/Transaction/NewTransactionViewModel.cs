@@ -1,57 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using EntityLayer;
-using Inventory_Management.Model;
-using BusinessLayer;
 using System.Windows.Input;
+using System.Windows.Controls;
+using System.Windows;
+using BusinessLayer;
+using Inventory_Management.Model;
+using EntityLayer;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Net.Mail;
+using System.Net;
 
 namespace Inventory_Management.ViewModel
 {
-    public class EditTransactionViewModel : EditItemModel<TransactionHeadListEntity>
+    class NewTransactionViewModel : BindableBase
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        // Constructor
-        public EditTransactionViewModel(TransactionHeadListEntity item, bool newRecord, string itemName) : base(item, newRecord, itemName)
-        {
-            TransactionDate = Item.Head.Date;
+        public Window NewTransactionWindow { get; set; }
 
-            this.TransactionBody.CollectionChanged += this.OnCollectionChanged;
-            if (Item.Head.Id > 0)
-            {
-                var list = ManageTransactions.ListBody(Item.Head.Id);
-                foreach (var record in list)
-                    TransactionBody.Add(new BindableTransactionBodyListEntity(record));
-            }
-      
-            Users = UserLogin.ListUsers();
-
-            if (Item.User != null)
-                foreach(var record in Users.Where(p=>p.Username == Item.User.Username))
-                    SelectedUser = record;
-
-            SelectedProductCategory = new ProductCategoryEntity() { Category = " - All product categories - ", Id = 0 };
-            ProductCategories.Add(SelectedProductCategory);
-
-            ProductCategories.AddRange(ManageProducts.ListProductCategories());
-        }
         // Transaction date
         private DateTime _transactionDate;
         public DateTime TransactionDate
         {
             get { return _transactionDate; }
             set { SetProperty(ref _transactionDate, value); }
-        }
-
-        // Partners
-        private List<UserEntity> _users;
-        public List<UserEntity> Users
-        {
-            get { return _users; }
-            set { SetProperty(ref _users, value); }
         }
 
         private UserEntity _selectedUser;
@@ -119,7 +92,7 @@ namespace Inventory_Management.ViewModel
         // Transaction body
         private ObservableCollection<BindableTransactionBodyListEntity> _transactionBody;
         public ObservableCollection<BindableTransactionBodyListEntity> TransactionBody
-        { 
+        {
             get
             {
                 if (_transactionBody == null) _transactionBody = new ObservableCollection<BindableTransactionBodyListEntity>();
@@ -198,10 +171,8 @@ namespace Inventory_Management.ViewModel
             return (SelectedBody != null);
         }
 
-        protected override bool Save(object parameter)
+        protected bool Save(object parameter)
         {
-            log.Debug("Save " + ItemName);
-
             if (SelectedUser == null)
             {
                 log.Error("Save transaction error Pleace select a user.");
@@ -209,6 +180,7 @@ namespace Inventory_Management.ViewModel
             }
             else
             {
+                TransactionHeadListEntity Item = new TransactionHeadListEntity();
                 Item.Head.Username = SelectedUser.Username;
                 Item.Head.TotalPrice = TotalPrice;
                 Item.Head.Date = TransactionDate;
@@ -216,7 +188,35 @@ namespace Inventory_Management.ViewModel
                 var list = new List<TransactionBodyListEntity>();
                 foreach (var record in TransactionBody)
                     list.Add(record.Item);
-                return ManageTransactions.AddOrModifyTransaction(Item.Head, list);
+                bool result = ManageTransactions.AddOrModifyTransaction(Item.Head, list);
+              
+                Email("Merci pour votre commande", SelectedUser.Email);
+                return result;
+            }
+        }
+
+        public static void Email(string htmlString, string to  )
+        {
+            try
+            {
+                string from = "it.tutor@gmail.com";
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress(from);
+                message.To.Add(new MailAddress(to));
+                message.Subject = "Order confirmation";
+                message.IsBodyHtml = true; //to make message body as html  
+                message.Body = htmlString;
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com"; //for gmail host  
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(from, "nor@h1701");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+            }
+            catch (Exception e) {
+                log.Error("Send email to user: " + e.ToString());
             }
         }
     }

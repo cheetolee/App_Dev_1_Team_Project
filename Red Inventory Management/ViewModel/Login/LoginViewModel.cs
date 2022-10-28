@@ -4,6 +4,8 @@ using System.Windows.Controls;
 using System.Windows;
 using BusinessLayer;
 using Inventory_Management.Model;
+using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Inventory_Management.ViewModel
 {
@@ -67,6 +69,8 @@ namespace Inventory_Management.ViewModel
                 catch (ArgumentException e)
                 {
                     log.Error("Login error :" + e.Message);
+                    MessageBox.Show(e.Message, "Login error ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
             }

@@ -9,9 +9,6 @@ namespace EntityLayer
     {
         [Key]
         public int Id { get; set; }
-
-        public bool Incoming { get; set; }
-
         public string Username { get; set; }
 
         [Column(TypeName = "DateTime2")]

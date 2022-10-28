@@ -22,7 +22,7 @@ namespace BusinessLayer
             var list = TransactionProvider.ListHead(p => p.Username == username);
             list.Sort();
             foreach (var record in list)
-                record.ListVariable = record.Head.TotalPrice * (record.Head.Incoming ? -1 : 1);
+                record.ListVariable = record.Head.TotalPrice;
             return list;
         }
         public static List<TransactionBodyListEntity> ListBody(int transactionId)

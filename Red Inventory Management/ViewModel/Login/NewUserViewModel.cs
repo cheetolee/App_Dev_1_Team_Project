@@ -9,11 +9,68 @@ namespace Inventory_Management.ViewModel
     class NewUserViewModel : BindableBase
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
+        private string _firstname;
+        private string _lastname;
+        private string _address;
+        private string _phone;
+        private string _email;
         private string _userID;
         private string _password;
         private string _confirm;
         public Window NewUserWindow { get; set; }
+
+        public string Firstname
+        {
+            get
+            {
+                if (_firstname == null) _firstname = "";
+                return _firstname;
+            }
+            set { SetProperty(ref _firstname, value); }
+        }
+
+        public string Lastname
+        {
+            get
+            {
+                if (_lastname == null) _lastname = "";
+                return _lastname;
+            }
+            set { SetProperty(ref _lastname, value); }
+        }
+
+        public string Address
+        {
+            get
+            {
+                if (_address == null) _address = "";
+                return _address;
+            }
+            set { SetProperty(ref _address, value); }
+        }
+
+
+        public string Phone
+        {
+            get
+            {
+                if (_phone == null) _phone = "";
+                return _phone;
+            }
+            set { SetProperty(ref _phone, value); }
+        }
+
+        public string Email
+        {
+            get
+            {
+                if (_email == null) _email = "";
+                return _email;
+            }
+            set { SetProperty(ref _email, value); }
+        }
+
+
         public string UserID
         {
             get
@@ -65,7 +122,7 @@ namespace Inventory_Management.ViewModel
             {
                 try
                 {
-                    if (UserLogin.AddUser(UserID, Password))
+                    if (UserLogin.AddUser(Firstname,Lastname,Address,Phone,Email,UserID, Password))
                     {
                         log.Info("New user added:" + String.Format("Username: {0}", UserID));
                         NewUserWindow.Close();

@@ -9,11 +9,10 @@ namespace EntityLayer
             :this()
         {
             Code = p.Code;
-            CostPrice = p.CostPrice;
+            Price = p.Price;
             Quantity = p.Quantity;
             Id = p.Id;
             Name = p.Name;
-            SellPrice = p.SellPrice;
         }
         public ProductListEntity(ProductEntity p, ProductCategoryEntity c)
             :this(p)
@@ -25,8 +24,7 @@ namespace EntityLayer
         public string Name { get; set; }
         public int Quantity { get; set; }
         public string Category { get; set; }
-        public decimal CostPrice { get; set; }
-        public decimal SellPrice { get; set; }
+        public decimal Price { get; set; }
 
         public int CompareTo(ProductListEntity other)
         {

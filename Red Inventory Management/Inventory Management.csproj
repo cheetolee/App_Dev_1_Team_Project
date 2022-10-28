@@ -71,8 +71,8 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -115,6 +115,7 @@
     <Compile Include="ViewModel\Lists\UserTransactionsViewModel.cs" />
     <Compile Include="ViewModel\Lists\ListDetails\InventoryDetailsViewModel.cs" />
     <Compile Include="ViewModel\Lists\ListDetails\UserTransactionsDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Transaction\NewTransactionViewModel.cs" />
     <Compile Include="ViewModel\Tables\Edit\EditTransactionViewModel.cs" />
     <Compile Include="ViewModel\Lists\InventoryViewModel.cs" />
     <Compile Include="ViewModel\Tables\Edit\EditProductCategoryViewModel.cs" />
@@ -145,6 +146,9 @@
     </Compile>
     <Compile Include="Views\Database\SetupConnectionMenuView.xaml.cs">
       <DependentUpon>SetupConnectionMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transaction\NewTransactionWindow.xaml.cs">
+      <DependentUpon>NewTransactionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Tables\PartnersTableView.xaml.cs">
       <DependentUpon>PartnersTableView.xaml</DependentUpon>
@@ -222,6 +226,10 @@
     <Page Include="Views\Database\SetupConnectionMenuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Transaction\NewTransactionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Tables\PartnersTableView.xaml">
       <SubType>Designer</SubType>

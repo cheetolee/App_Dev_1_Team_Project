@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="New User" 
-        Height="250" 
+        Height="500" 
         Width="500" 
         WindowStartupLocation="CenterScreen" 
         Style="{StaticResource loginWindowStyle}">
     <Grid Background="Gray">
         <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -21,12 +26,22 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Username:" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Label Grid.Row="1" Grid.Column="0" Content="Password:" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Label Grid.Row="2" Grid.Column="0" Content="Confirm password:" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBox Name="userIDTextBox" Text="{Binding UserID, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" Margin="10" />
-        <TextBox Name="PasswordTextBox" Text="{Binding Password, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Margin="10" />
-        <TextBox Name="ConfirmTextBox" Text="{Binding Confirm, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" Margin="10" />
-        <Button Command="{Binding Click_AddUserCommand}" Grid.Row="3" Grid.ColumnSpan="2" Content="Add new user" Margin="10" />
+        <Label Grid.Row="0" Grid.Column="0" Content="Firstname:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Lastname:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label Grid.Row="2" Grid.Column="0" Content="Address:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label Grid.Row="3" Grid.Column="0" Content="Phone:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label Grid.Row="4" Grid.Column="0" Content="Email:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label Grid.Row="5" Grid.Column="0" Content="Username:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label Grid.Row="6" Grid.Column="0" Content="Password:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label Grid.Row="7" Grid.Column="0" Content="Confirm password:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox Name="userFirstameTextBox" Text="{Binding Firstname, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" Margin="10" />
+        <TextBox Name="userLastnameTextBox" Text="{Binding Lastname, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Margin="10" />
+        <TextBox Name="userAddressTextBox" Text="{Binding Address, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" Margin="10" />
+        <TextBox Name="userPhoneTextBox" Text="{Binding Phone, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" Margin="10" />
+        <TextBox Name="userEmailTextBox" Text="{Binding Email, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" Margin="10" />
+        <TextBox Name="userIDTextBox" Text="{Binding UserID, Mode=TwoWay}" Grid.Row="5" Grid.Column="1" Margin="10" />
+        <TextBox Name="PasswordTextBox" Text="{Binding Password, Mode=TwoWay}" Grid.Row="6" Grid.Column="1" Margin="10" />
+        <TextBox Name="ConfirmTextBox" Text="{Binding Confirm, Mode=TwoWay}" Grid.Row="7" Grid.Column="1" Margin="10" />
+        <Button Command="{Binding Click_AddUserCommand}" Grid.Row="8" Grid.ColumnSpan="2" Content="Add new user" Margin="10" />
     </Grid>
 </Window>

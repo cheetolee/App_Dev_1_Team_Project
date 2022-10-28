@@ -70,9 +70,9 @@ namespace DataLayer
         /// <param name="userID"></param>
         /// <param name="password">The encription of the password is handled by the UsersProvider.</param>
         /// <returns></returns>
-        public static bool NewUser(string userID,string password)
+        public static bool NewUser(string firstname, string lastname, string address, string email, string phone, string userID,string password)
         {
-            UserEntity User = new UserEntity( userID, EncriptionProvider.ComputeHash(password, EncriptionProvider.Supported_HA.SHA256, null));
+            UserEntity User = new UserEntity( firstname, lastname, address, email, phone, userID, EncriptionProvider.ComputeHash(password, EncriptionProvider.Supported_HA.SHA256, null));
             return DatabaseConnection.Add<UserEntity>(User);
         }
 
@@ -95,12 +95,13 @@ namespace DataLayer
         /// <returns></returns>
         public static bool Modify(string oldUserID, string newUserId, string password)
         {
-            UserEntity User = new UserEntity(newUserId, EncriptionProvider.ComputeHash(password, EncriptionProvider.Supported_HA.SHA256, null));
-            if (oldUserID != newUserId) 
-            {
-                return (DeleteUser(oldUserID) && NewUser(newUserId, password));
-            }
-            return DatabaseConnection.Modify<UserEntity>(User, p => p.Username == oldUserID);
+           // UserEntity User = new UserEntity(newUserId, EncriptionProvider.ComputeHash(password, EncriptionProvider.Supported_HA.SHA256, null));
+           // if (oldUserID != newUserId) 
+           // {
+           //     return (DeleteUser(oldUserID) && NewUser(newUserId, password));
+           // }
+           // return DatabaseConnection.Modify<UserEntity>(User, p => p.Username == oldUserID);
+            return true;
         }
 
         /// <summary>

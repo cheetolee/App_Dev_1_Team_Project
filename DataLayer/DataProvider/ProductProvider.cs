@@ -27,11 +27,10 @@ namespace DataLayer
                     {
                         CategoryId = categoryId,
                         Code = listElement.Code,
-                        CostPrice = listElement.CostPrice,
+                        Price = listElement.Price,
                         Quantity = listElement.Quantity,
                         Id = listElement.Id,
                         Name = listElement.Name,
-                        SellPrice = listElement.SellPrice
                     };
                 }
                 catch (Exception ex)

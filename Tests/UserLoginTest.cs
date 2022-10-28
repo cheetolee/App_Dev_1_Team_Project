@@ -1,3 +1,4 @@
+using BusinessLayer;
 using System;
 using System.Windows;
 namespace Tests
@@ -7,9 +8,11 @@ namespace Tests
 
     {
         [TestMethod]
-        public void TestLogin()
+        public void IsValidUserIdTest()
         {
-     
+           
+            bool result = UserLogin.IsValidUserID("1234");
+            Assert.AreEqual(true, result);
         }
     }
 }

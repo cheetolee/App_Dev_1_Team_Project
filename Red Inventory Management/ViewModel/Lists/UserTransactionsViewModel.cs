@@ -13,7 +13,7 @@ namespace Inventory_Management.ViewModel
 
         public UserTransactionsViewModel()
         {
-            TableName = "Partner transaction summary";
+            TableName = "User transaction summary";
         }
 
         private decimal _totalTransactions;

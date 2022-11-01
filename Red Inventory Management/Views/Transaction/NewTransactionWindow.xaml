@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         xmlns:models="clr-namespace:Inventory_Management.Model"
-
+        Name="NTWindow"
         Title="New Transaction" 
         Height="Auto" 
         Width="Auto"
@@ -130,8 +130,8 @@
                 <ColumnDefinition  />
                 <ColumnDefinition  />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0"  Content="Save" Margin="10" FontWeight="Bold" Command="{Binding SaveCommand}" CommandParameter="{Binding ElementName=EIWindow}"/>
-            <Button Grid.Column="1"  Content="Cancel" Margin="10" FontWeight="Bold" Command="{Binding CloseCommand}" CommandParameter="{Binding ElementName=EIWindow}" />
+            <Button Grid.Column="0"  Content="Save" Margin="10" FontWeight="Bold" Command="{Binding SaveCommand}" CommandParameter="{Binding ElementName=NTWindow}"/>
+            <Button Grid.Column="1"  Content="Cancel" Margin="10" FontWeight="Bold" Command="{Binding CloseCommand}" CommandParameter="{Binding ElementName=NTWindow}" />
         </Grid>
 
     </Grid>

@@ -10,15 +10,36 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Net.Mail;
 using System.Net;
+using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
+using Inventory_Management.Service;
+using System.Linq;
+using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json.Linq;
 
 namespace Inventory_Management.ViewModel
 {
-    class NewTransactionViewModel : BindableBase
+    class NewTransactionViewModel : EditItemModel<TransactionHeadListEntity>
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public Window NewTransactionWindow { get; set; }
+        public NewTransactionViewModel() : base(null, true, null)
+        {
+            this.TransactionBody.CollectionChanged += this.OnCollectionChanged;
 
+            List<UserEntity> Users = UserLogin.ListUsers();
+
+            if (SelectedUser == null)
+                foreach (var record in Users.Where(p => p.Username == UserLogin.LoginedUser))
+                    SelectedUser = record;
+
+            SelectedProductCategory = new ProductCategoryEntity() { Category = " - All product categories - ", Id = 0 };
+            ProductCategories.Add(SelectedProductCategory);
+
+            ProductCategories.AddRange(ManageProducts.ListProductCategories());
+        }
+
+   
         // Transaction date
         private DateTime _transactionDate;
         public DateTime TransactionDate
@@ -36,12 +57,16 @@ namespace Inventory_Management.ViewModel
 
         // Products
         private List<ProductCategoryEntity> _productCategories;
+
+
         public List<ProductCategoryEntity> ProductCategories
         {
             get
             {
-                if (_productCategories == null) _productCategories = new List<ProductCategoryEntity>();
-                return _productCategories;
+           
+                    if (_productCategories == null) _productCategories = new List<ProductCategoryEntity>();
+                    return _productCategories;
+                
             }
             set { SetProperty(ref _productCategories, value); }
         }
@@ -153,6 +178,7 @@ namespace Inventory_Management.ViewModel
         }
 
         private ICommand _removeProductCommand;
+
         public ICommand RemoveProductCommand
         {
             get
@@ -171,11 +197,14 @@ namespace Inventory_Management.ViewModel
             return (SelectedBody != null);
         }
 
-        protected bool Save(object parameter)
+     
+        protected override bool Save(object parameter)
         {
             if (SelectedUser == null)
             {
                 log.Error("Save transaction error Pleace select a user.");
+                MessageBox.Show("Pleace select a user", "Save transaction error ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else
@@ -189,34 +218,14 @@ namespace Inventory_Management.ViewModel
                 foreach (var record in TransactionBody)
                     list.Add(record.Item);
                 bool result = ManageTransactions.AddOrModifyTransaction(Item.Head, list);
-              
-                Email("Merci pour votre commande", SelectedUser.Email);
-                return result;
-            }
-        }
+                if (result)
+                {
+                    MessageBox.Show("Order create", "Save transaction success ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        public static void Email(string htmlString, string to  )
-        {
-            try
-            {
-                string from = "it.tutor@gmail.com";
-                MailMessage message = new MailMessage();
-                SmtpClient smtp = new SmtpClient();
-                message.From = new MailAddress(from);
-                message.To.Add(new MailAddress(to));
-                message.Subject = "Order confirmation";
-                message.IsBodyHtml = true; //to make message body as html  
-                message.Body = htmlString;
-                smtp.Port = 587;
-                smtp.Host = "smtp.gmail.com"; //for gmail host  
-                smtp.EnableSsl = true;
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential(from, "nor@h1701");
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.Send(message);
-            }
-            catch (Exception e) {
-                log.Error("Send email to user: " + e.ToString());
+                    EmailConfirmation.sendOrderConfirmation(SelectedUser.Email);
+                }
+                return result;
             }
         }
     }

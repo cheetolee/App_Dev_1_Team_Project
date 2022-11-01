@@ -18,7 +18,7 @@
     <DataTemplate DataType = "{x:Type viewModels:InventoryViewModel}">
         <views:ListView/>
     </DataTemplate>
-    <DataTemplate DataType = "{x:Type viewModels:UserTransactionsDetailsViewModel}">
+    <DataTemplate DataType = "{x:Type viewModels:UserTransactionsViewModel}">
         <views:ListView/>
     </DataTemplate>
     <DataTemplate DataType = "{x:Type viewModels:SetupConnectionViewModel}">

@@ -74,6 +74,9 @@
     <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -104,6 +107,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Service\EmailConfirmation.cs" />
+    <Compile Include="Service\GoogleLogin.cs" />
     <Compile Include="Model\Control\AutoSizedGridView.cs" />
     <Compile Include="Model\ViewModelBase\BindableBase.cs" />
     <Compile Include="Model\BindableTransactionBodyListEntity.cs" />
@@ -112,6 +117,7 @@
     <Compile Include="Model\ViewModelBase\EditItemModel.cs" />
     <Compile Include="Model\ViewModelBase\ListModel.cs" />
     <Compile Include="Model\ViewModelBase\TableModel.cs" />
+    <Compile Include="Utils\Utils.cs" />
     <Compile Include="ViewModel\Lists\UserTransactionsViewModel.cs" />
     <Compile Include="ViewModel\Lists\ListDetails\InventoryDetailsViewModel.cs" />
     <Compile Include="ViewModel\Lists\ListDetails\UserTransactionsDetailsViewModel.cs" />
@@ -146,6 +152,9 @@
     </Compile>
     <Compile Include="Views\Database\SetupConnectionMenuView.xaml.cs">
       <DependentUpon>SetupConnectionMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transaction\ListTransactionWindowr.xaml.cs">
+      <DependentUpon>ListTransactionWindowr.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Transaction\NewTransactionWindow.xaml.cs">
       <DependentUpon>NewTransactionWindow.xaml</DependentUpon>
@@ -226,6 +235,10 @@
     <Page Include="Views\Database\SetupConnectionMenuView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Transaction\ListTransactionWindowr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Transaction\NewTransactionWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -369,6 +382,10 @@
       <Project>{9a9da9f8-9527-4ddf-adeb-c10831c494b0}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Views\Assets\btn_google_sign-in.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

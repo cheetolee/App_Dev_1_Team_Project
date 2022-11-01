@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Mail;
 using DataLayer;
 using EntityLayer;
 
@@ -6,6 +7,16 @@ namespace BusinessLayer
 {
     public class UserLogin
     {
+        private static string _googleUser;
+        public static string GoogleUser
+        {
+            get
+            {
+                if (_googleUser == null) _googleUser = "";
+                return _googleUser;
+            }
+        }
+
         private static string _loginedUser;
         public static string LoginedUser
         {
@@ -23,6 +34,23 @@ namespace BusinessLayer
             {
                 return _loginedAdmin;
             }
+        }
+
+       
+        private static bool IsValidEmail(string email)
+        {
+            var valid = true;
+
+            try
+            {
+                var emailAddress = new MailAddress(email);
+            }
+            catch
+            {
+                valid = false;
+            }
+
+            return valid;
         }
 
         public static bool IsEmptyUserDatabase()
@@ -52,21 +80,22 @@ namespace BusinessLayer
             {
                 throw new System.ArgumentException("Wrong address.", "address");
             }
-            if (string.IsNullOrWhiteSpace(phone))
+            if (string.IsNullOrWhiteSpace(phone) || phone.Length != 10)
             {
-                throw new System.ArgumentException("Wrong phone.", "phone");
+                throw new System.ArgumentException("Wrong phone. Phone should have length equal at 10", "phone");
             }
-            if (string.IsNullOrWhiteSpace(email))
+
+            if (string.IsNullOrWhiteSpace(email) || !IsValidEmail(email))
             {
-                throw new System.ArgumentException("Wrong email.", "email");
+                throw new System.ArgumentException("Wrong email. Email is not valid", "email");
             }
-            if (string.IsNullOrWhiteSpace(userID))
+            if (string.IsNullOrWhiteSpace(userID) || userID.Length < 5)
             {
-                throw new System.ArgumentException("Wrong username.", "userID");
+                throw new System.ArgumentException("Wrong username. Min length for username is 5", "userID");
             }
-            else if (string.IsNullOrWhiteSpace(password))
+            else if (string.IsNullOrWhiteSpace(password) || password.Length < 5)
             {
-                throw new System.ArgumentException("Wrong password.", "userID");
+                throw new System.ArgumentException("Wrong password. Min length for username is 5", "password");
             }
             return UsersProvider.NewUser( firstname,  lastname,  address,  email,  phone, userID, password);
         }
@@ -74,6 +103,13 @@ namespace BusinessLayer
         {
             return UsersProvider.DeleteUser(userID);
         }
+
+        public static void LoginGoogle(string userId)
+        {
+            _googleUser = userId;
+          
+        }
+
         public static void Login(string userID, string password)
         {
             if (userID.Equals("admin") && password.Equals("admin"))

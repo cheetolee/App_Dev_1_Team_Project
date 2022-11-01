@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
 using BusinessLayer;
 using Inventory_Management.Model;
+using Inventory_Management.Service;
+using MessageBox = System.Windows.Forms.MessageBox;
+
 
 namespace Inventory_Management.ViewModel
 {
@@ -125,12 +129,18 @@ namespace Inventory_Management.ViewModel
                     if (UserLogin.AddUser(Firstname,Lastname,Address,Phone,Email,UserID, Password))
                     {
                         log.Info("New user added:" + String.Format("Username: {0}", UserID));
+                        MessageBox.Show("Account created", "Registration success",
+                                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        EmailConfirmation.sendRegistrationConfirmation(Email);
                         NewUserWindow.Close();
                     }
                     else
                     {
                         log.Error("New user error: Username already exist.");
+                        MessageBox.Show("Username already exist", "Registration fail",
+                                               MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    
                 }
                 catch
                 {

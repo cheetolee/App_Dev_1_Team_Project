@@ -18,16 +18,11 @@ namespace Inventory_Management.Views
     /// <summary>
     /// Interaction logic for NewTransactionWindow.xaml
     /// </summary>
-    public partial class NewTransactionWindow : Window
+    public partial class ListTransactionWindow : Window
     {
-        public NewTransactionWindow()
+        public ListTransactionWindow()
         {
             InitializeComponent();
-            this.DataContext = new NewTransactionViewModel();
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
         }
     }
 }

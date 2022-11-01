@@ -38,7 +38,7 @@ namespace Inventory_Management.ViewModel
                 }
 
                 // New user.
-                if (UserLogin.IsEmptyUserDatabase())
+              /*  if (UserLogin.IsEmptyUserDatabase())
                 {
                     log.Debug("User datatable is empty. => Opening new user window.");
                     NewUserWindow NUW = new NewUserWindow();
@@ -49,7 +49,7 @@ namespace Inventory_Management.ViewModel
                         CloseWindow();
                         return;
                     }
-                }
+                }*/
 
                 // Login.
                 log.Debug("Opening login window.");
@@ -72,10 +72,10 @@ namespace Inventory_Management.ViewModel
         }
         #endregion
         #region Menus and Views
-        //private string[] _mainAdminMenu = new string[] { "Tables", "Transactions", "Lists", "Settings" };
         private string[] _mainAdminMenu = new string[] { "Tables", "Settings" };
+        //private string[] _mainAdminMenu = new string[] { "Tables", "Settings" };
         private string[] _mainUserMenu = new string[] { "New Order", " My Orders"};
-        private string[] _tablesMenu = new string[] { "Products", "Product categories", "Transactions" };
+        private string[] _tablesMenu = new string[] { "Products", "Product categories", "Orders" };
         private ProductsViewModel _products = new ProductsViewModel();
         private ProductCategoriesViewModel _productCategories = new ProductCategoriesViewModel();
         private UserTransactionsViewModel _userTransactions = new UserTransactionsViewModel();
@@ -123,11 +123,6 @@ namespace Inventory_Management.ViewModel
                         CurrentMenu = _tablesMenu;
                         break;
                
-                    case "Orders":
-                        CurrentViewModel = _userTransactions;
-                        ((RelayCommand)_userTransactions.RefreshListCommand).CheckAndExecute(_userTransactions);
-                        break;
-
                     case "Settings":
                         CurrentMenu = _settingsMenu;
                         break;
@@ -142,13 +137,14 @@ namespace Inventory_Management.ViewModel
                 {
                    
                     case "Orders":
-                        log.Debug(string.Format("Switch to list orders: {0}", destination));
 
-                        CurrentViewModel = _userTransactions;
-                        ((RelayCommand)_userTransactions.RefreshListCommand).CheckAndExecute(_userTransactions);
-                    break;
+                        log.Debug(string.Format("Switch to list orders: {0}", destination));
+                        ListTransactionWindow LTW = new ListTransactionWindow();
+                        LTW.ShowDialog();
+                        break;
 
                     case "New Order":
+
                         log.Debug("New order window");
                         NewTransactionWindow NUW = new NewTransactionWindow();
                         NUW.ShowDialog();
@@ -202,7 +198,7 @@ namespace Inventory_Management.ViewModel
                     CurrentViewModel = _users;
                     ((RelayCommand)_users.RefreshListCommand).CheckAndExecute(_users);
                     break;
-                case "Transactions":
+                case "Orders":
                     CurrentViewModel = _userTransactions;
                     ((RelayCommand)_userTransactions.RefreshListCommand).CheckAndExecute(_userTransactions);
                     break;

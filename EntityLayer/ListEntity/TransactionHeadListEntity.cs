@@ -4,7 +4,9 @@ namespace EntityLayer
 {
     public class TransactionHeadListEntity : IComparable<TransactionHeadListEntity>
     {
-        public TransactionHeadListEntity() { }
+        public TransactionHeadListEntity() {
+            Head = new TransactionHeadEntity();
+        }
         public TransactionHeadListEntity(TransactionHeadEntity head, UserEntity user)
             :this()
         {

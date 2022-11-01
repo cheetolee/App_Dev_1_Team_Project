@@ -14,8 +14,11 @@
             <models:AutoSizedGridView>
                 <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Head.Id}" />
                 <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Path=Head.Date,StringFormat='dd/MM/yyyy'}" />
-                <GridViewColumn Header="Partner name" DisplayMemberBinding="{Binding Path=Partner.Name}" />
-                <GridViewColumn Header="Partner code" DisplayMemberBinding="{Binding Path=Partner.Code}" />
+                <GridViewColumn Header="First name" DisplayMemberBinding="{Binding Path=User.FirstName}" />
+                <GridViewColumn Header="Last name" DisplayMemberBinding="{Binding Path=User.LastName}" />
+                <GridViewColumn Header="Email name" DisplayMemberBinding="{Binding Path=User.Email}" />
+                <GridViewColumn Header="Telephone" DisplayMemberBinding="{Binding Path=User.Telephone}" />
+                <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Path=User.Address}" />
                 <GridViewColumn Header="Total price" Width="Auto">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>

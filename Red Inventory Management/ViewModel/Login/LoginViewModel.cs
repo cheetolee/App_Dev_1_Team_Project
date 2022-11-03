@@ -109,6 +109,28 @@ namespace Inventory_Management.ViewModel
             newUserWindow.ShowDialog();
         }
 
+
+        private ICommand _click_LoginFBCommand;
+        public ICommand Click_LoginFBCommand
+        {
+            get
+            {
+                if (_click_LoginFBCommand == null) _click_LoginFBCommand = new RelayCommand(new Action<object>(LoginFB));
+                return _click_LoginFBCommand;
+            }
+            set { SetProperty(ref _click_LoginFBCommand, value); }
+        }
+
+        private const string AppId = "798673734733320";
+        private const string Scopes = "user_about_me,publish_stream,offline_access";
+
+        private void LoginFB(object sender)
+        {
+            FBDialog fbd = new FBDialog(AppId, Scopes);
+            fbd.Owner = LoginWindow;
+            fbd.Show();
+        }
+
         private ICommand _click_LoginGoogleCommand;
         public ICommand Click_LoginGoogleCommand
         {

@@ -4,8 +4,10 @@ using System.Windows;
 using BusinessLayer;
 using Moq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using DataLayer;
 using System.Collections.Generic;
+using EntityLayer;
+using System.Net;
+using DataLayer;
 
 namespace Tests
 {
@@ -32,12 +34,21 @@ namespace Tests
         [DataRow("john", "Doe", "15500 peltrie", "tuto@gmail.com", "4389448978", "546", "")]
         [DataRow("john", "Doe", "15500 peltrie", "tuto@gmail.com", "4389448978", "username", "")]
         [DataRow("john", "Doe", "15500 peltrie", "tuto@gmail.com", "4389448978", "username", "435")]
-        [DataRow("john", "Doe", "15500 peltrie", "tuto@gmail.com", "4389448978", "username", "password")]
         [DataTestMethod]
-        public void AddUser_Should_Fail_For_InvalidData(string fn, String ln, String ad, String em, String ph, String uname, String pwd )
+        public void AddUser_Should_Fail(string fn, String ln, String ad, String em, String ph, String uname, String pwd )
         {
 
             Assert.ThrowsException<ArgumentException>(() => UserLogin.AddUser(fn, ln, ad, em, ph, uname, pwd));
+
+        }
+
+        [TestMethod]
+        public void AddUser_Should_Success(string fn, String ln, String ad, String em, String ph, String uname, String pwd)
+        {
+            UserEntity User = new UserEntity(fn, ln, ad, em, ph, uname, EncriptionProvider.ComputeHash(pwd, EncriptionProvider.Supported_HA.SHA256, null));
+
+          
+            UserLogin.AddUser("john", "Doe", "15500 peltrie", "tuto@gmail.com", "4389448978", "username", "password");
 
         }
 

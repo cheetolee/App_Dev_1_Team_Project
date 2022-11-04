@@ -75,11 +75,13 @@ namespace Inventory_Management.ViewModel
         private string[] _mainAdminMenu = new string[] { "Tables", "Settings" };
         //private string[] _mainAdminMenu = new string[] { "Tables", "Settings" };
         private string[] _mainUserMenu = new string[] { "New Order", " My Orders"};
-        private string[] _tablesMenu = new string[] { "Products", "Product categories", "Orders" };
+        private string[] _tablesMenu = new string[] { "Products", "Product categories", "Orders" , "Customers" };
         private ProductsViewModel _products = new ProductsViewModel();
         private ProductCategoriesViewModel _productCategories = new ProductCategoriesViewModel();
         private UserTransactionsViewModel _userTransactions = new UserTransactionsViewModel();
-        private string[] _settingsMenu = new string[] { "Users", "Database" };
+        private TransactionsViewModel _transactions = new TransactionsViewModel();
+
+        private string[] _settingsMenu = new string[] { "Database" };
         private UsersViewModel _users = new UsersViewModel();
         private SetupConnectionViewModel _setupConnection = new SetupConnectionViewModel();
         #endregion
@@ -194,13 +196,13 @@ namespace Inventory_Management.ViewModel
                     CurrentViewModel = _productCategories;
                     ((RelayCommand)_productCategories.RefreshListCommand).CheckAndExecute(_productCategories);
                     break;
-                case "Users":
+                case "Customers":
                     CurrentViewModel = _users;
                     ((RelayCommand)_users.RefreshListCommand).CheckAndExecute(_users);
                     break;
                 case "Orders":
-                    CurrentViewModel = _userTransactions;
-                    ((RelayCommand)_userTransactions.RefreshListCommand).CheckAndExecute(_userTransactions);
+                    CurrentViewModel = _transactions;
+                    ((RelayCommand)_transactions.RefreshListCommand).CheckAndExecute(_transactions);
                     break;
                 case "Database":
                     CurrentViewModel = _setupConnection;

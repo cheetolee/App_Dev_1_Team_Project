@@ -26,7 +26,7 @@
         <TextBlock Grid.Column="0" Grid.Row="0" Text="Date:" TextAlignment="Right" Margin="5"/>
         <DatePicker Grid.Column="1" Grid.Row="0" SelectedDate="{Binding TransactionDate}"  Margin="5" />
 
-        <TextBlock Grid.Column="0" Grid.Row="1" Text="Partner:" TextAlignment="Right" Margin="5"/>
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Customer:" TextAlignment="Right" Margin="5"/>
         <ListView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser,Mode=TwoWay}" Margin="5"  Height="130">
             <ListView.View>
                 <models:AutoSizedGridView>

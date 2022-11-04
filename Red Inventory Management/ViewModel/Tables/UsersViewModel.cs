@@ -3,6 +3,7 @@ using System;
 using EntityLayer;
 using BusinessLayer;
 using Inventory_Management.Views;
+using Red_Inventory_Management.ViewModel;
 
 namespace Inventory_Management.ViewModel
 {
@@ -29,9 +30,15 @@ namespace Inventory_Management.ViewModel
         {
             log.Debug("Edit " + ItemName + " button");
 
-            //string UserID = SelectedItem.Username;
-           
-        }
+            string UserID = SelectedItem.Username;
+            EditUserViewModel EUVM = new EditUserViewModel(UserID);
+            EditUserWindow EUV = new EditUserWindow() { DataContext = EUVM };
+            EUVM.EditWindow = EUV;
+            EUV.ShowDialog();
+            RefreshList(parameter);
+        
+
+    }
 
         protected override void NewItem(object parameter)
         {

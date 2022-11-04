@@ -12,6 +12,11 @@
     <ListView Grid.Row="1" ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem}" HorizontalAlignment="Stretch" HorizontalContentAlignment ="Stretch">
         <ListView.View>
             <models:AutoSizedGridView>
+                <GridViewColumn Header="First name" DisplayMemberBinding="{Binding Firstname}" />
+                <GridViewColumn Header="Last name" DisplayMemberBinding="{Binding Lastname}" />
+                <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" />
+                <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding Phone}" />
+                <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Address}" />
                 <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}" />
                 <GridViewColumn Header="Password" DisplayMemberBinding="{Binding Password}" />
             </models:AutoSizedGridView>

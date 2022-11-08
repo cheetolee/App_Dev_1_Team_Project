@@ -73,7 +73,7 @@ namespace Tests
         public void DatabaseConnection_Should_Fail()
         {
             DataLayer.DatabaseConnection.InitializeConnection("E:\\Personal Documents\\Personal Projects\\Grocery_App_K_CIM-master(1)\\Grocery_App_K_CIM-master\\Red Inventory Management\\bin\\Debug\\", "Database");
-            Assert.IsTrue(BusinessLayer.DatabaseConnection.TestConnection());
+            Assert.IsFalse(BusinessLayer.DatabaseConnection.TestConnection());
         }
 
         [TestMethod]

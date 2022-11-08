@@ -11,8 +11,8 @@ namespace Inventory_Management.Service
 {
     public static class EmailConfirmation
     {
-        private static string FROM_EMAIL = "it.tuteur@gmail.com";
-        private static string FROM_PASS = "ophxrgxmzsasnzbu";
+        private static string FROM_EMAIL = "appdevoneassignment2022@gmail.com";
+        private static string FROM_PASS = "y2KwoJjV";
 
         private static String REGISTRATION_MSG = "Thanks for going all through the registration process";
         private static String REGISTRATION_SUBJECT = "Registration complete";

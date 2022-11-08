@@ -142,9 +142,11 @@ namespace Inventory_Management.ViewModel
                     }
                     
                 }
-                catch
+                catch(Exception e)
                 {
                     log.Error("New user error : Please fill the Username and Password fieleds.");
+                    MessageBox.Show(e.Message, "Registration fail",
+                                               MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

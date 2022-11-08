@@ -15,6 +15,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Web.UI.WebControls;
+using Firebase.Auth;
 
 namespace Inventory_Management.ViewModel
 {
@@ -28,6 +29,7 @@ namespace Inventory_Management.ViewModel
         const string authorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
         const string tokenEndpoint = "https://www.googleapis.com/oauth2/v4/token";
         const string userInfoEndpoint = "https://www.googleapis.com/oauth2/v3/userinfo";
+        public string webApiKey = "AIzaSyAN7SreA9VJT1qaMuFkQeC6UvxAN7Ti3g8";
 
         private string _userID;
         private string _password;
@@ -304,10 +306,84 @@ namespace Inventory_Management.ViewModel
             {
                 // reads response body
                 string userinfoResponseText = await userinfoResponseReader.ReadToEndAsync();
-               // UserLogin.LoginGoogle(userinfoResponseText);
-               // LoginWindow.Close();
-               // log.Info(userinfoResponseText);
+                try
+                {
+                    UserLogin.Login("admin", "admin");
+                    log.Info(String.Format("Welcome, {0}!", UserID) + "You have succesfully logged in.");
+                    LoginWindow.Close();
+                }
+                catch (ArgumentException e)
+                {
+                    log.Error("Login error :" + e.Message);
+                    MessageBox.Show(e.Message, "Login error ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
+        private ICommand _click_LoginEmailCommand;
+        public ICommand Click_LoginEmailCommand
+        {
+            get
+            {
+                if (_click_LoginEmailCommand == null) _click_LoginEmailCommand = new RelayCommand(new Action<object>(EmailLoginAsync));
+                return _click_LoginEmailCommand;
+            }
+            set { SetProperty(ref _click_LoginEmailCommand, value); }
+        }
+
+        private async void EmailLoginAsync(object parameter)
+        {
+            log.Debug("Email Login button");
+
+                PasswordBox pwBox = (PasswordBox)parameter;
+                Password = pwBox.Password;
+
+            try
+            {
+
+                var auth = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
+                var b = await auth.CreateUserWithEmailAndPasswordAsync(UserID, Password, UserID, false);
+                var a = await auth.SignInWithEmailAndPasswordAsync(UserID, Password);
+                string token = a.FirebaseToken;
+                var user = a.User;
+                if (token != "")
+                {
+                    UserLogin.Login("admin", "admin");
+                    log.Info(String.Format("Welcome, {0}!", UserID) + "You have succesfully logged in.");
+                    LoginWindow.Close();
+                }
+            }
+            catch (ArgumentException e)
+            {
+                log.Error("Login error :" + e.Message);
+                MessageBox.Show(e.Message, "Login error ",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FirebaseAuthException e)
+            {
+                if (e.Message.Contains("EMAIL_EXISTS"))
+                {
+                    var auth = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
+                    var a = await auth.SignInWithEmailAndPasswordAsync(UserID, Password);
+                    string token = a.FirebaseToken;
+                    if (token != "")
+                    {
+                        UserLogin.Login("admin", "admin");
+                        log.Info(String.Format("Welcome, {0}!", UserID) + "You have succesfully logged in.");
+                        LoginWindow.Close();
+                    }
+                }
+                else
+                {
+                    log.Error("Firebase Login error :" + e.Message);
+                    MessageBox.Show("Please provide valid login details", "Login error ",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+        }
+
+
     }
 }

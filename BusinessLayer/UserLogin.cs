@@ -37,7 +37,7 @@ namespace BusinessLayer
         }
 
        
-        private static bool IsValidEmail(string email)
+        public static bool IsValidEmail(string email)
         {
             var valid = true;
 
@@ -66,7 +66,7 @@ namespace BusinessLayer
         {
             return UsersProvider.IsValidPassword(userID, password);
         }
-        public static bool AddUser(string firstname, string lastname, string address, string email, string phone, string userID, string password)
+        public static bool AddUser(string firstname, string lastname, string address, string phone, string email, string userID, string password)
         {
             if (string.IsNullOrWhiteSpace(firstname))
             {
@@ -99,6 +99,12 @@ namespace BusinessLayer
             }
             return UsersProvider.NewUser( firstname,  lastname,  address,  email,  phone, userID, password);
         }
+
+        public static void IsValidEmail()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public static bool RemoveUser(string userID)
         {
             return UsersProvider.DeleteUser(userID);

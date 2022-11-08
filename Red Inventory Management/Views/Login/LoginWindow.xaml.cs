@@ -29,7 +29,7 @@ namespace Inventory_Management.Views
             }
             else
             {
-                MessageBox.Show(ResultsData.Accesstoken + Environment.NewLine + ResultsData.GrantedScopes + Environment.NewLine + ResultsData.DeniedScopes);
+                //MessageBox.Show(ResultsData.Accesstoken + Environment.NewLine + ResultsData.GrantedScopes + Environment.NewLine + ResultsData.DeniedScopes);
             };
         }
     }
